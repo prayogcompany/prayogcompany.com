@@ -1,0 +1,16 @@
+{
+  "name": "prayog-company",
+  "version": "1.0.0",
+  "description": "The Prayog Company Website",
+  "scripts": {
+    "dev": "npx serve",
+    "build": "mkdir -p dist && cp -r index.html assets css js privacy-policy terms-and-conditions refund-policy dist/ && node scripts/fix-paths.js",
+    "preview": "npx serve dist"
+  },
+  "dependencies": {
+    "serve": "^14.2.1"
+  },
+  "devDependencies": {
+    "fs-extra": "^11.2.0"
+  }
+} 

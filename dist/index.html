@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prayog Company - Technology Studio</title>
+    <link rel="icon" href="assets/logo.png" type="image/png">
+    <link rel="apple-touch-icon" href="assets/logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header id="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="assets/logo.png" alt="The Prayog Company" class="logo-img">
+                    <span class="logo-text">The Prayog Company</span>
+                </div>
+                <nav class="nav-links">
+                    <a href="#philosophy" class="nav-link">Philosophy</a>
+                    <a href="#creations" class="nav-link">Creations</a>
+                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=contact@prayogcompany.com" class="nav-link" target="_blank">Contact</a>
+                </nav>
+                <div class="mobile-menu-btn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero" id="hero">
+        <div class="hero-particles" id="particles"></div>
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Experiment. <br>Iterate. <br>Create.</h1>
+                <p class="hero-subtitle">Prayog (प्रयोग) means experimentation in Sanskrit. We're a technology studio built on the principle that great products emerge through thoughtful experimentation.</p>
+                <a href="#philosophy" class="btn">Explore Our Philosophy</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="philosophy">
+        <div class="container">
+            <h2 class="section-title">Philosophy</h2>
+            <p class="section-subtitle">At our core, we believe in the power of experimentation. We build software through continuous testing, learning, and refining to create solutions that truly work.</p>
+            
+            <div class="philosophy-grid">
+                <div class="philosophy-card interactive-element">
+                    <div class="card-symbol">
+                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="50" cy="50" r="45" fill="none" stroke="currentColor" stroke-width="2"/>
+                            <circle cx="50" cy="50" r="30" fill="none" stroke="currentColor" stroke-width="2"/>
+                            <circle cx="50" cy="50" r="15" fill="none" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <h3>Iteration</h3>
+                    <p>Rapid prototyping and agile development drive our process. We ship fast, gather data, and optimize relentlessly.</p>
+                </div>
+                <div class="philosophy-card interactive-element">
+                    <div class="card-symbol">
+                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <line x1="50" y1="10" x2="50" y2="90" stroke="currentColor" stroke-width="2"/>
+                            <line x1="10" y1="50" x2="90" y2="50" stroke="currentColor" stroke-width="2"/>
+                            <circle cx="50" cy="50" r="25" fill="none" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <h3>Simplicity</h3>
+                    <p>Clean code, minimal interfaces, maximum impact. We build elegant solutions that just work.</p>
+                </div>
+                <div class="philosophy-card interactive-element">
+                    <div class="card-symbol">
+                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <polygon points="50,10 90,90 10,90" fill="none" stroke="currentColor" stroke-width="2"/>
+                            <circle cx="50" cy="50" r="15" fill="none" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <h3>Innovation</h3>
+                    <p>We merge cutting-edge tech with proven frameworks to build tomorrow's solutions today.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="creations">
+        <div class="container">
+            <h2 class="section-title">Creations</h2>
+            <p class="section-subtitle">Our experiments lead to real-world solutions that help people and businesses. Each product is the result of our iterative development process.</p>
+            
+            <div class="creations-grid">
+                <div class="creation-card">
+                    <div class="creation-image">
+                        <div class="creation-mandala"></div>
+                    </div>
+                    <div class="creation-overlay">
+                        <h3 class="creation-title">ClearlyYou</h3>
+                        <p class="creation-desc">An AI skincare app designed for the new world, helping users in their daily lives. Launching soon with pre-orders available now.</p>
+                        <!-- <a href="#" class="btn">Pre-order Now</a> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- <section class="section" id="connect">
+        <div class="container">
+            <h2 class="section-title">Connect</h2>
+            <p class="section-subtitle">Share your feedback.</p>
+            
+            <div class="contact-form">
+                <form id="contactForm">
+                    <div id="formSuccess" class="form-message success">Thank you for your message! We'll get back to you soon.</div>
+                    <div id="formError" class="form-message error">Sorry, there was an error sending your message. Please try again.</div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Name</label>
+                        <input type="text" class="form-input" name="name" placeholder="Your name" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Email</label>
+                        <input type="email" class="form-input" name="email" placeholder="Your email" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Message</label>
+                        <textarea class="form-textarea" name="message" rows="5" placeholder="Share your thoughts..." required></textarea>
+                    </div>
+                    <input type="hidden" name="_subject" value="New message from Prayog Company website">
+                    <button type="submit" class="btn" id="submitButton">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section> -->
+
+    <footer>
+        <div class="container">
+            <div class="footer-copyright">
+
+                <div class="footer-content">
+                    <div class="footer-logo">
+                        <img src="assets/logo.png" alt="Prayog Company" class="footer-logo-img">
+                        <span>The Prayog Company</span>
+                    </div>
+                    <div class="footer-nav">
+                        <a href="#philosophy" class="footer-link">Philosophy</a>
+                        <a href="#creations" class="footer-link">Creations</a>
+                        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=contact@prayogcompany.com" class="footer-link" target="_blank">Contact</a>
+                    </div>
+                    <div class="footer-legal">
+                        <a href="/privacy-policy" class="footer-link">Privacy Policy</a>
+                        <a href="/terms-and-conditions" class="footer-link">Terms & Conditions</a>
+                        <a href="/refund-policy" class="footer-link">Refund Policy</a>
+                    </div>
+                </div>
+                
+                © 2025 The Prayog Company. All experiments reserved.
+                <div class="footer-email">Contact us: <a href="https://mail.google.com/mail/?view=cm&fs=1&to=contact@prayogcompany.com" target="_blank">contact@prayogcompany.com</a></div>
+            </div>          
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html> 
