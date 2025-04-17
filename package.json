@@ -4,7 +4,7 @@
   "description": "The Prayog Company Website",
   "scripts": {
     "dev": "npx serve",
-    "build": "mkdir -p dist && cp -r index.html assets css js privacy-policy terms-and-conditions refund-policy dist/ && node scripts/fix-paths.js",
+    "build": "mkdir -p dist && cp -r index.html assets css js clearlyyou privacy-policy terms-and-conditions refund-policy dist/ && node scripts/fix-paths.js",
     "preview": "npx serve dist"
   },
   "dependencies": {
