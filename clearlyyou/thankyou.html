@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pre-order Confirmed - ClearlyYou</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            background-color: #fdf6ec; /* Light peach background */
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            text-align: center;
+            padding: 20px;
+        }
+        .container {
+            background-color: #fffaf5;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #5c3c20; /* Dark brown */
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 1.1em;
+            margin-bottom: 25px;
+            color: #555;
+        }
+        a {
+            color: #e89972; /* Coral/Orange */
+            text-decoration: none;
+            font-weight: bold;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .details {
+            font-size: 0.9em;
+            color: #777;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Thank You for Pre-ordering ClearlyYou!</h1>
+        <p>Your spot is secured. We're excited to bring you the future of AI skincare.</p>
+        <p>We'll notify you when the app launches!</p>
+        <a href="/clearlyyou/">Return to ClearlyYou Homepage</a>
+
+        <div class="details" id="payment-details">
+            <!-- Payment details can be optionally displayed here -->
+        </div>
+    </div>
+
+    <script>
+        // Optional: Display payment details from URL query parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const paymentId = urlParams.get('payment_id');
+        const status = urlParams.get('status');
+        const detailsDiv = document.getElementById('payment-details');
+
+        if (paymentId && status && detailsDiv) {
+            let message = `Payment Status: ${status}`;
+            if (paymentId) {
+                message += `<br>Payment ID: ${paymentId}`;
+            }
+            detailsDiv.innerHTML = message;
+        }
+    </script>
+</body>
+</html>

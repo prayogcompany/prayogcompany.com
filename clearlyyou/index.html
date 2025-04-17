@@ -27,9 +27,12 @@
             padding: 20px 0;
         }
         .logo {
-            font-size: 1.5em;
-            font-weight: bold;
-            /* Add logo icon styling if available */
+            display: flex;
+            align-items: center;
+        }
+        .logo img {
+            height: 80px;
+            width: auto;
         }
         nav ul {
             list-style: none;
@@ -150,33 +153,11 @@
              position: relative;
              overflow: hidden;
         }
-        .app-video-container video {
+        .app-video-container iframe {
             width: 100%;
             height: 100%;
-            object-fit: contain; /* Cover the container */
-            border-radius: 4px; /* Match screen rounding */
-            display: block; /* Remove extra space below video */
-        }
-        .play-button {
-            position: absolute; /* Position over the video */
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%); /* Center the button */
-            width: 50px;
-            height: 50px;
-            background-color: rgba(255, 255, 255, 0.8);
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 2em; /* Adjust triangle size */
-            color: #555;
-            cursor: pointer;
-            z-index: 10; /* Ensure button is above video */
-        }
-         .play-button::before {
-            content: '▶'; /* Unicode play symbol */
-            margin-left: 5px; /* Adjust position */
+            border: none; /* Remove default iframe border */
+            border-radius: 4px; /* Match container rounding */
         }
 
         .personal-story {
@@ -290,7 +271,12 @@
 <body>
     <div class="container">
         <header>
-            <div class="logo">ClearlyYou</div>
+            <div class="logo">
+                <a href="/clearlyyou">
+                    <img src="../assets/clearlyyou_logo.png" alt="ClearlyYou Logo">
+                </a>
+                <h1>ClearlyYou</h1>
+            </div>
             <nav>
                 <ul>
                     <li><a href="https://mail.google.com/mail/?view=cm&fs=1&to=s@prayogcompany.com" target="_blank">Contact</a></li>
@@ -303,21 +289,23 @@
             <section class="content-left">
                 <h1>Your AI skincare app</h1>
                 <h2>No cap. Nature-based skincare for the Clearly YOU 🤍 </h2>
-                <p>The offer exists for a limited time only before it launches soon on the app Store.</p>
+                <p><i>Limited time offer. Book your spot now before it launches soon on the app store.</i></p>
                 <button class="pre-order-btn">Pre-order now</button>
-                <p class="early-bird-price">Early bird: $10</p>
-                <p>Pre-order now at an exclusive early-bird price! </p>
+                <p class="early-bird-price"><h2>Early bird: $10</h2></p>
+                <p><i>Pre-order now at an exclusive early-bird price!</i></p>
             </section>
 
             <section class="content-right">
                 <div class="laptop-mockup">
                     <div class="laptop-screen">
                         <div class="app-video-container">
-                             <video id="app-video" poster="../assets/thumbail.png" muted playsinline loop>
-                                <source src="launch.mov" type="video/mp4">
-                                Your browser does not support the video tag
-                            </video>
-                             <div class="play-button" id="play-button"></div>
+                             <iframe id="app-video" 
+                                src="https://www.youtube.com/embed/6F821L9YRO0"
+                                title="ClearlyYou App Demo"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen>
+                             </iframe>
                         </div>
                     </div>
                     <div class="laptop-base"></div>
@@ -326,7 +314,7 @@
         </main>
 
         <section class="personal-story">
-            <p>Hi, I'm the solo founder, S. It all started when I was with my girlfriend. 
+            <p>Hi, I'm S. I solo built this app. It all started when I was with my girlfriend. 
                 She taught me skincare :) and wanted to keep track of her routine so I thought to build an app for her. 
                 Though now we broke up LMAO but I kept on working on the app and now launching it soon. 
                 Make it successful ;D so that she hears about it. Thanks.</p>
@@ -338,8 +326,12 @@
         <div class="container">
             <div class="footer-content">
                  <div class="footer-logo">
-                    <!-- <img src="assets/logo.png" alt="ClearlyYou Logo" class="footer-logo-img"> -->
-                    <span>ClearlyYou</span> <!-- Using text logo for now -->
+                    <div class="logo">
+                        <a href="/clearlyyou">
+                            <img src="../assets/clearlyyou_logo.png" alt="ClearlyYou Logo">
+                        </a>
+                        <span>ClearlyYou</span>
+                    </div>
                  </div>
                  <div class="footer-legal">
                      <a href="/privacy-policy" class="footer-link">Privacy Policy</a>
@@ -355,38 +347,17 @@
     </footer>
 
     <script>
-        // Script for video play/pause toggle
-        const video = document.getElementById('app-video');
-        const playButton = document.getElementById('play-button');
+        // Custom video script removed as YouTube iframe has its own controls
 
-        if (video && playButton) {
-            playButton.addEventListener('click', () => {
-                // Play button only plays the video initially
-                if (video.paused || video.ended) {
-                    video.play();
-                    playButton.style.display = 'none'; // Hide button when playing
-                }
-                // We don't handle pause via the button itself, only via video click
-            });
-
-            // Add click listener to the video itself to toggle play/pause
-            video.addEventListener('click', () => {
-                if (video.paused || video.ended) {
-                    video.play();
-                    playButton.style.display = 'none';
-                } else {
-                    video.pause();
-                    playButton.style.display = 'flex'; // Show button when paused by click
-                }
-            });
-
-            // Optional: Show button again if video is paused manually or ends
-            video.addEventListener('pause', () => {
-                playButton.style.display = 'flex';
-            });
-            video.addEventListener('ended', () => {
-                 playButton.style.display = 'flex';
-                 // Optionally reset video to start: video.currentTime = 0;
+        // Dodo Payments Integration
+        const preOrderButton = document.querySelector('.pre-order-btn');
+        if (preOrderButton) {
+            preOrderButton.addEventListener('click', () => {
+                const productId = 'pdt_YAqFhjGrUgHHRiJzbzTtJ';
+                // Assuming base URL is https://prayogcompany.com - change if needed
+                const redirectUrl = encodeURIComponent('http://localhost:3000/clearlyyou/thankyou');
+                const dodoCheckoutUrl = `https://checkout.dodopayments.com/buy/${productId}?redirect_url=${redirectUrl}`;
+                window.open(dodoCheckoutUrl, '_blank'); // Open in new tab
             });
         }
 
