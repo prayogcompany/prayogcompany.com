@@ -355,7 +355,7 @@
             preOrderButton.addEventListener('click', () => {
                 const productId = 'pdt_YAqFhjGrUgHHRiJzbzTtJ';
                 // Assuming base URL is https://prayogcompany.com - change if needed
-                const redirectUrl = encodeURIComponent('http://localhost:3000/clearlyyou/thankyou');
+                const redirectUrl = encodeURIComponent('https://prayogcompany.com/clearlyyou/thankyou');
                 const dodoCheckoutUrl = `https://checkout.dodopayments.com/buy/${productId}?redirect_url=${redirectUrl}`;
                 window.open(dodoCheckoutUrl, '_blank'); // Open in new tab
             });
