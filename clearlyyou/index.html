@@ -353,7 +353,7 @@
         const preOrderButton = document.querySelector('.pre-order-btn');
         if (preOrderButton) {
             preOrderButton.addEventListener('click', () => {
-                const productId = process.env.CLEARLYYOU_LAUNCH_PRODUCT_ID;
+                const productId = process.env.CLEARLYYOU_LAUNCH_PRODUCT_ID || 'pdt_k0ckDeF8V42DlvAp9551X';
                 // Assuming base URL is https://prayogcompany.com - change if needed
                 const redirectUrl = encodeURIComponent('https://prayogcompany.com/clearlyyou/thankyou');
                 const dodoCheckoutUrl = `https://checkout.dodopayments.com/buy/${productId}?redirect_url=${redirectUrl}`;
